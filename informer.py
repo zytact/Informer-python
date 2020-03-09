@@ -13,7 +13,7 @@ from pygame import mixer
 from selenium.common.exceptions import NoSuchElementException, StaleElementReferenceException
 
 def save(name, status, duration):
-    conn = sqlite3.connect('data.db')
+    conn = sqlite3.connect('informer.db')
     c = conn.cursor()
     c.execute("CREATE TABLE IF NOT EXISTS Status(Name varchar(40), Time datetime, Status varchar(7), Duration varchar(15))")
     c.execute("INSERT INTO Status VALUES(?, datetime('now', 'localtime'), ?, ?)", (name.capitalize(), status, duration))

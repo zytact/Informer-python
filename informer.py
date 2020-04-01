@@ -30,7 +30,7 @@ def main():
         print()
         print()
         print('Enter the name of the person to track')
-        name = input('>').lower()
+        name = input('> ').lower()
         browser = webdriver.Firefox() # Use webdriver.Chrome() if using google chrome or chromium-based browsers
         browser.get('https://web.whatsapp.com')
         time.sleep(14)
@@ -38,7 +38,7 @@ def main():
         temp1 = None
         while True:
             try:
-                elem = browser.find_element_by_class_name('_315-i')
+                elem = browser.find_element_by_css_selector('.O90ur')
                 if elem.text == 'online' and flag != 1:
                     mixer.init()
                     mixer.music.load(audio) #Path to your audio of choice
